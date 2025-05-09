@@ -27,7 +27,7 @@ The Time Capsule API is a Node.js (Express) based backend that allows users to c
 bash
 Copy
 Edit
-docker run --name postgres-db -e POSTGRES_PASSWORD=time@2025 -p 7654:5432 -d postgres
+docker run --name postgres-db -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=time@2025 -e  POSTGRES_DB=time_capsule_dev -p 7654:5432 -d postgres
 This will:
 
 Run a container named postgres-db
@@ -77,6 +77,8 @@ GET	/capsules	List user's capsules
 GET	/capsules/:id	Get a capsule by ID
 PUT	/capsules/:id	Update a capsule
 DELETE	/capsules/:id	Delete a capsule
+
+Use time-capsule.postman_collection postman collections for detailed API request. This collection is available in root directory.
 
 🧰 Tech Stack
 Backend: Node.js, Express
