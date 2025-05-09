@@ -1,0 +1,284 @@
+{
+	"info": {
+		"_postman_id": "f03b2b89-79c5-4d7f-8b7c-4ff86c6a025e",
+		"name": "time-campsule",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41281762"
+	},
+	"item": [
+		{
+			"name": "http://localhost:5000/auth/login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"saurav\",\n  \"password\": \"1234\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/auth/register",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"saurav\",\n  \"password\": \"1234\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/capsules",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc0NjcyNDE2NSwiZXhwIjoxNzQ2NzI3NzY1fQ.qxUkydt2vp6NgZCGRuAfN7Vol4U8T_mOjoF8mAniAdo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"message\": \"Hello future!\",\n    \"unlock_at\": \"2025-12-31T23:59:59Z\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/capsules",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"capsules"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/capsules/2?code=cc2efcca-c3d2-402a-85db-a94c9f603788",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc0NjcyNDE2NSwiZXhwIjoxNzQ2NzI3NzY1fQ.qxUkydt2vp6NgZCGRuAfN7Vol4U8T_mOjoF8mAniAdo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/capsules/2?code=cc2efcca-c3d2-402a-85db-a94c9f603788",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"capsules",
+						"2"
+					],
+					"query": [
+						{
+							"key": "code",
+							"value": "cc2efcca-c3d2-402a-85db-a94c9f603788"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/capsules?page=1&limit=10",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc0NjcyNDE2NSwiZXhwIjoxNzQ2NzI3NzY1fQ.qxUkydt2vp6NgZCGRuAfN7Vol4U8T_mOjoF8mAniAdo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/capsules?page=1&limit=10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"capsules"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/capsules/1?code=8ae0a103-77c2-40f2-b2cd-0dc1db03eac3",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImlhdCI6MTc0NjcyNTM0NywiZXhwIjoxNzQ2NzI4OTQ3fQ.gGPqAeMjQWj3_AeCErjJ56o-5N7nOvYp9pSXunSq-WU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"message\": \"Updated message!\",\n  \"unlock_at\": \"2026-01-01T00:00:00Z\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/capsules/4?code=47486ff3-364a-401d-85bc-12bf9dc46bc7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"capsules",
+						"4"
+					],
+					"query": [
+						{
+							"key": "code",
+							"value": "47486ff3-364a-401d-85bc-12bf9dc46bc7"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/capsules/2?code=cc2efcca-c3d2-402a-85db-a94c9f603788",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImlhdCI6MTc0Njc3NzE2NSwiZXhwIjoxNzQ2NzgwNzY1fQ.wTx4rWxLX3N3hcQUIWImGT2IZJu9475kFEbJH_dMDC8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "code",
+							"value": "fb6116c6-9b13-4c36-87cd-4c657d8d95d5",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5000/capsules/1?code=fb6116c6-9b13-4c36-87cd-4c657d8d95d5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"capsules",
+						"1"
+					],
+					"query": [
+						{
+							"key": "code",
+							"value": "cc2efcca-c3d2-402a-85db-a94c9f603788",
+							"disabled": true
+						},
+						{
+							"key": "code",
+							"value": "fb6116c6-9b13-4c36-87cd-4c657d8d95d5"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
